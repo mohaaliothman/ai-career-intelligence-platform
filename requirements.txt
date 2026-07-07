@@ -1,0 +1,10 @@
+pandas
+numpy
+requests
+beautifulsoup4
+python-dotenv
+SQLAlchemy
+psycopg2-binary
+rapidfuzz
+scikit-learn
+jupyter
