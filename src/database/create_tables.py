@@ -4,7 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from src.database.base import Base
 from src.database.connection import engine
-from src.database.models.job import Job
+from src.database.models import Job
 from src.utils.logger import get_logger
 
 
