@@ -9,3 +9,4 @@ rapidfuzz
 scikit-learn
 jupyter
 python-dotenv
+psycopg[binary]
