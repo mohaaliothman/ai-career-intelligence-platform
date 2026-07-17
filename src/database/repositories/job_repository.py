@@ -23,3 +23,10 @@ class JobRepository(BaseRepository):
 
         return self._session.scalar(statement) #scalar() executes the query and returns the first ORM value from the first row.
         
+
+    def create(self, job: Job) -> Job:
+        """ Add a new job to the current database transaction """
+        self._session.add(job)
+        self._session.flush()
+
+        return job
