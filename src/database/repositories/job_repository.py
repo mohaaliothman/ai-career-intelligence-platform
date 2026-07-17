@@ -26,7 +26,5 @@ class JobRepository(BaseRepository):
 
     def create(self, job: Job) -> Job:
         """ Add a new job to the current database transaction """
-        self._session.add(job)
-        self._session.flush()
 
-        return job
+        return self._add(job)
