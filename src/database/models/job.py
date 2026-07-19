@@ -111,5 +111,5 @@ class Job(Base):
     def __repr__(self) -> str:    # It provides a clear representation during Debugging
         return (
             f"Job(id={self.id!r}, title={self.title!r}, "
-            f"company_name={self.company_name!r}, source={self.source!r})"
+            f"company_name={self.company_name!r}, source={self.source_name!r})"
         )

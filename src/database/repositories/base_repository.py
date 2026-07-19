@@ -15,6 +15,6 @@ class BaseRepository:       # This is the common origin from which specialized r
     def _add(self, obj:Any) -> Any : # Why we use _add not add = because it isn't public API
         """ Add an ORM object to the current transaction and flush it """
         self._session.add(obj)
-        self.session.flush()
+        self._session.flush()
 
         return obj
