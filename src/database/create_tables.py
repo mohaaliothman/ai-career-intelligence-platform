@@ -4,8 +4,10 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from src.database.base import Base
 from src.database.connection import engine
-from src.database.models import Job
 from src.utils.logger import get_logger
+from src.database.models.job import Job
+from src.database.models.skill import Skill
+from src.database.models.job_skill import JobSkill
 
 
 logger = get_logger(__name__)
