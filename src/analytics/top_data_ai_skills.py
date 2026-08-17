@@ -37,19 +37,37 @@ def main():
 
         skill_counter = Counter()
         data_ai_jobs = 0
+        data_ai_jobs_with_skills = 0
 
         for job_id, title in jobs:
             skills = skills_by_job.get(job_id, set())
 
             if is_data_ai_job(title, skills):
                 data_ai_jobs += 1
-                skill_counter.update(skills)
 
-        print(f"Data/AI Jobs: {data_ai_jobs}")
+                if skills:
+                    data_ai_jobs_with_skills += 1
+                    skill_counter.update(skills)
+
+        data_ai_jobs_without_skills = (
+            data_ai_jobs - data_ai_jobs_with_skills
+        )
+
+        print(f"Total Data/AI Jobs: {data_ai_jobs}")
+        print(
+            f"Data/AI Jobs with Skills: "
+            f"{data_ai_jobs_with_skills}"
+        )
+        print(
+            f"Data/AI Jobs without Skills: "
+            f"{data_ai_jobs_without_skills}"
+        )
+
         print("\nTop Data/AI Skills:")
 
         for skill, count in skill_counter.most_common(15):
             print(f"{skill}: {count}")
+
 
 
 if __name__ == "__main__":
