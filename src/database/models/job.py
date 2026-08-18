@@ -108,6 +108,17 @@ class Job(Base):
         default=True,
     )
 
+    is_data_ai: Mapped[bool] = mapped_column(
+        Boolean,
+        nullable=False,
+        default=False,
+    )
+
+    data_ai_role: Mapped[str | None] = mapped_column(
+        String(100),
+        nullable=True,
+    )
+
     def __repr__(self) -> str:    # It provides a clear representation during Debugging
         return (
             f"Job(id={self.id!r}, title={self.title!r}, "
